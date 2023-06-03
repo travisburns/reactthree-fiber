@@ -1,17 +1,25 @@
 import { useState } from 'react'
+import Clicker from './Clicker'
 
 
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <h1>Fuck</h1>
+export default function App() {
   
-    </>
-  )
+  const [hasClicker, setHasClicker] = useState(true)
+  
+const toggleClickerClick = () => {
+  setHasClicker(!hasClicker)
+}
+  
+  return <>
+  <button onClick={ toggleClickerClick }>{ hasClicker ? 'Hide' : 'Show' } clicker </button>
+  { hasClicker && <Clicker />}
+  
+  
+  </>
+   
 }
 
-export default App
+
+
+
