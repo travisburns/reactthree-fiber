@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
 
-function Clicker() {
-  
-    const [click, setClick] = useState(parseInt(localStorage.getItem('click') ?? 0))
+function Clicker({ keyName, color}) {
+
+
+    const [click, setClick] = useState(parseInt(localStorage.getItem('keyName') ?? 0))
   
     
     const clickCount = () => {
@@ -13,7 +14,7 @@ function Clicker() {
     useEffect(()=> {
         return () => 
         {
-            localStorage.removeItem('click')
+            localStorage.removeItem('keyName')
         }
         
     }, [])
@@ -21,7 +22,7 @@ function Clicker() {
 
     useEffect(() => 
     {
-        localStorage.setItem('click', click)
+        localStorage.setItem('keyName', click)
     }, 
     
     [click]
@@ -31,8 +32,9 @@ function Clicker() {
     return (
     
     <div>
+    <div style={{color}}>Count: {click}</div>
     <button onClick={clickCount} className='clicker' > count </button>  
-    <p>Count: {click}</p>
+    
     </div>
   )
 }

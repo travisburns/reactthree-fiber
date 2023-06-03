@@ -3,7 +3,7 @@ import Clicker from './Clicker'
 
 
 
-export default function App() {
+export default function App({children}) {
   
   const [hasClicker, setHasClicker] = useState(true)
   
@@ -12,8 +12,13 @@ const toggleClickerClick = () => {
 }
   
   return <>
+  {children}
   <button onClick={ toggleClickerClick }>{ hasClicker ? 'Hide' : 'Show' } clicker </button>
-  { hasClicker && <Clicker />}
+  { hasClicker && <>
+    <Clicker keyName="countA" color={`hsl(${ Math.random() * 360 }deg, 100%, 70%)`} />
+    <Clicker keyName="countB" color={`hsl(${ Math.random() * 360 }deg, 100%, 70%)`}/>
+    <Clicker keyName="countC" color={`hsl(${ Math.random() * 360 }deg, 100%, 70%)`}/>
+  </>}
   
   
   </>
