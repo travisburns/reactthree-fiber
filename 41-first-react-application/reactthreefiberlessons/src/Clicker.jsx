@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 
-function Clicker({ keyName, color}) {
+function Clicker({increment,  keyName, color}) {
 
 
     const [click, setClick] = useState(parseInt(localStorage.getItem('keyName') ?? 0))
@@ -28,6 +28,11 @@ function Clicker({ keyName, color}) {
     [click]
     
     )
+
+    const buttonClick = () => {
+        setClick(click + 1)
+        increment()
+    }
     
     return (
     
