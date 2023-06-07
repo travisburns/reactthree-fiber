@@ -13,8 +13,9 @@ export default function App() {
 
 
 return (
-
+<Canvas>
 <Experience />
+</Canvas>
 )
 
    
