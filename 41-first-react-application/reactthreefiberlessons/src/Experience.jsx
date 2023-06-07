@@ -13,7 +13,7 @@ export default function Experience()
     <sphereGeometry scale={1.5}/>
     <meshBasicMaterial color="orange" wireframe/>
   </mesh>
-  <mesh rotation-y={Math.PI * 0.40} position-x={ 1 } scale={1.5}>
+  <mesh position-y={ -1} rotation-x={ - Math.PI * 0.5 } scale={10}>
     <planeGeometry scale={1.5}/>
     <meshBasicMaterial color="green" wireframe={false}/>
   </mesh>
