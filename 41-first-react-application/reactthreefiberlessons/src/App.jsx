@@ -13,7 +13,8 @@ export default function App() {
 
 
 return (
-<Canvas>
+<Canvas 
+>
 <Experience />
 </Canvas>
 )
