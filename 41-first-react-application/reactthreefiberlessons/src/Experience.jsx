@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import {useRef} from 'react'
-
+import CustomComponent from './CustomComponent'
 
 
 export default function Experience() 
@@ -37,5 +37,7 @@ export default function Experience()
     <meshStandardMaterial color="green" wireframe={false}/>
   </mesh>
     
+  <CustomComponent />
+
     </>
 }
